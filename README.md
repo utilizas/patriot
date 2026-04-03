@@ -12,13 +12,6 @@
 
 ---
 
-This essay examines the accelerating erosion of the multilateral order constructed in the aftermath of two world wars, integrating perspectives from political philosophy, the epistemology of risk, game theory, and the evolutionary biology of social cooperation. It documents how a handful of unscrupulous leaders — self-proclaimed patriots — are dismantling the cooperative mechanisms that enabled the human species to survive its worst instincts.
-
-## Author
-
-**Miguel Moreno**
-University of Granada · [ORCID 0000-0002-0746-9587](https://orcid.org/0000-0002-0746-9587)
-
 <details>
 <summary>Cover — provided as a courtesy</summary>
 
@@ -29,6 +22,17 @@ University of Granada · [ORCID 0000-0002-0746-9587](https://orcid.org/0000-0002
 *A brief history of regression, illustrated*
 
 </details>
+
+This essay examines the accelerating erosion of the multilateral order constructed in the aftermath of two world wars, integrating perspectives from political philosophy, the epistemology of risk, game theory, and the evolutionary biology of social cooperation. It documents how a handful of unscrupulous leaders — self-proclaimed patriots — are dismantling the cooperative mechanisms that enabled the human species to survive its worst instincts.
+
+---
+
+## Author
+
+**Miguel Moreno**
+University of Granada · [ORCID 0000-0002-0746-9587](https://orcid.org/0000-0002-0746-9587)
+
+***
 
 ## Build
 
