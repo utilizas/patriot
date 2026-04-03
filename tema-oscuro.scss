@@ -1,0 +1,941 @@
+/*-- scss:defaults --*/
+
+// ─────────────────────────────────────────────
+//  VARIABLES SCSS — TEMA OSCURO  "Penumbra"
+//  "La amenaza del patriota irreflexivo"
+//  Miguel Moreno Muñoz — Universidad de Granada
+// ─────────────────────────────────────────────
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap');
+
+// Paleta base
+$bg-primary:        #0f1117;
+$bg-secondary:      #161b27;
+$bg-tertiary:       #1c2333;
+$bg-callout:        #1a2035;
+$bg-abstract:       #141c2e;
+
+$text-primary:      #e8e6e1;
+$text-secondary:    #b8b5af;
+$text-muted:        #8a8782;
+$text-label:        #9ca3af;
+
+$accent-gold:       #d4a853;
+$accent-gold-light: #e8c47a;
+$accent-blue:       #4a9eff;
+$accent-red:        #e05c5c;
+
+$border-subtle:     rgba(255,255,255,0.08);
+$border-medium:     rgba(255,255,255,0.14);
+
+$blockquote-bg:     #141922;
+$blockquote-border: #4a7fa5;
+$blockquote-text:   #c9cdd8;
+$blockquote-cite:   #8fa3b8;
+
+$hr-color:          rgba(212, 168, 83, 0.25);
+
+$font-display:      'Playfair Display', 'Georgia', serif;
+$font-body:         'Source Serif 4', 'Georgia', serif;
+$font-ui:           'Inter', system-ui, sans-serif;
+$font-mono:         'IBM Plex Mono', 'Courier New', monospace;
+
+$font-size-base:    1.05rem;
+$line-height-body:  1.85;
+$letter-spacing-lbl: 0.08em;
+
+// Variables Bootstrap/Quarto
+$body-bg:           $bg-primary;
+$body-color:        $text-primary;
+$font-family-base:  $font-body;
+$headings-font-family: $font-display;
+$link-color:        $accent-blue;
+$link-decoration:   none;
+$code-bg:           #0a0e18;
+$code-color:        #a8d4a8;
+$border-color:      $border-subtle;
+
+
+/*-- scss:rules --*/
+
+// ─────────────────────────────────────────────
+//  BODY
+// ─────────────────────────────────────────────
+
+body,
+.quarto-document-content {
+  background-color: $bg-primary !important;
+  color: $text-primary !important;
+  font-family: $font-body !important;
+  font-size: $font-size-base !important;
+  line-height: $line-height-body !important;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+main,
+#quarto-content,
+.page-columns {
+  background-color: $bg-primary !important;
+}
+
+// ─────────────────────────────────────────────
+//  COMPONENTES PERSONALIZADOS
+// ─────────────────────────────────────────────
+
+.satirical-aside {
+  background: $bg-tertiary !important;
+  border-left-color: $accent-gold !important;
+  color: $text-secondary !important;
+
+  &::before { color: $accent-gold !important; }
+  p         { color: $text-secondary !important; }
+}
+
+.denuncia-box {
+  background: rgba(180, 40, 40, 0.12) !important;
+  border-color: rgba(220, 80, 80, 0.30) !important;
+  border-left-color: $accent-red !important;
+  color: $text-secondary !important;
+
+  &::before { color: $accent-red !important; }
+  p         { color: $text-secondary !important; }
+}
+
+.cita-lider {
+  background: $bg-secondary !important;
+  border-color: $border-subtle !important;
+  color: $text-secondary !important;
+
+  p        { color: $text-secondary !important; }
+  .speaker { color: $text-primary !important; }
+  .context { color: $text-muted !important; }
+}
+
+.epigraph {
+  border-left-color: $blockquote-border !important;
+  color: $text-secondary !important;
+
+  p              { color: $text-secondary !important; }
+  .attribution   { color: $text-muted !important; }
+  .attribution p { color: $text-muted !important; }
+}
+
+// ─── Prefacio: drop cap y separador ──────────
+
+#preface-the-bewilderment-of-the-ordinary-citizen {
+  > p:first-of-type::first-letter {
+    color: $accent-gold !important;
+  }
+  > p:nth-of-type(3) {
+    border-top-color: $bg-tertiary !important;
+  }
+}
+
+
+// ─────────────────────────────────────────────
+//  TOC
+// ─────────────────────────────────────────────
+
+#TOC,
+nav#TOC,
+#quarto-sidebar {
+  background-color: darken($bg-primary, 2%) !important;
+  border-right: 1px solid $border-subtle !important;
+  font-family: $font-ui !important;
+  font-size: 0.82rem !important;
+  padding: 1.5rem 1rem !important;
+}
+
+nav#TOC .toc-title {
+  font-family: $font-ui !important;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  letter-spacing: $letter-spacing-lbl !important;
+  text-transform: uppercase !important;
+  color: $text-muted !important;
+  padding-bottom: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+  border-bottom: 1px solid $border-subtle !important;
+  display: block !important;
+}
+
+nav#TOC ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
+}
+
+nav#TOC a {
+  color: #c8c5be !important;
+  text-decoration: none !important;
+  font-family: $font-ui !important;
+  font-size: 0.815rem !important;
+  font-weight: 400 !important;
+  line-height: 1.45 !important;
+  display: block !important;
+  padding: 0.28rem 0.4rem !important;
+  border-radius: 3px !important;
+  border-bottom: none !important;
+  transition: color 0.2s ease, background 0.2s ease !important;
+
+  &:hover {
+    color: $accent-gold !important;
+    background: rgba(212, 168, 83, 0.07) !important;
+  }
+
+  &.active {
+    color: $accent-gold-light !important;
+    font-weight: 500 !important;
+    background: rgba(212, 168, 83, 0.1) !important;
+  }
+}
+
+nav#TOC ul ul a {
+  padding-left: 1.1rem !important;
+  font-size: 0.785rem !important;
+  color: $text-muted !important;
+}
+
+
+// ─────────────────────────────────────────────
+//  CABECERA
+// ─────────────────────────────────────────────
+
+h1.title,
+.quarto-title h1 {
+  font-family: $font-display !important;
+  font-size: clamp(2rem, 4.5vw, 3rem) !important;
+  font-weight: 700 !important;
+  color: $text-primary !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.01em !important;
+  margin-bottom: 0.45rem !important;
+}
+
+.subtitle,
+p.subtitle {
+  font-family: $font-display !important;
+  font-size: clamp(1.1rem, 2vw, 1.4rem) !important;
+  font-weight: 400 !important;
+  font-style: italic !important;
+  color: $text-secondary !important;
+  line-height: 1.45 !important;
+  margin-bottom: 1.8rem !important;
+  border-bottom: 1px solid $hr-color !important;
+  padding-bottom: 1.4rem !important;
+}
+
+.quarto-title-meta {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 0.6rem 2.5rem !important;
+  font-family: $font-ui !important;
+  margin-top: 0.2rem !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.quarto-title-meta-heading {
+  font-family: $font-ui !important;
+  font-size: 0.68rem !important;
+  font-weight: 600 !important;
+  letter-spacing: $letter-spacing-lbl !important;
+  text-transform: uppercase !important;
+  color: $text-label !important;
+  margin-bottom: 0.15rem !important;
+}
+
+.quarto-title-meta-contents {
+  font-family: $font-ui !important;
+  font-size: 0.92rem !important;
+  font-weight: 400 !important;
+  color: $text-secondary !important;
+
+  a {
+    color: $accent-blue !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
+  }
+}
+
+
+// ─────────────────────────────────────────────
+//  ABSTRACT
+// ─────────────────────────────────────────────
+
+div.abstract {
+  margin-top: 2.6rem !important;
+  border-top: 1px solid $hr-color !important;
+  background: $bg-abstract !important;
+  border-left: 3px solid $accent-gold !important;
+  border-radius: 0 4px 4px 0 !important;
+  padding: 1.6rem 1.8rem !important;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04) !important;
+
+  p.abstract-title {
+    font-family: $font-ui !important;
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    letter-spacing: $letter-spacing-lbl !important;
+    text-transform: uppercase !important;
+    color: $accent-gold !important;
+    margin-bottom: 0.8rem !important;
+    margin-top: 0 !important;
+  }
+
+  p {
+    font-family: $font-body !important;
+    font-size: 0.97rem !important;
+    line-height: 1.8 !important;
+    color: $text-primary !important;
+    font-weight: 300 !important;
+  }
+}
+
+#title-block-header .abstract,
+.quarto-title-block .abstract {
+  margin-top: 2.6rem !important;
+  border-top: 1px solid $hr-color !important;
+}
+
+.keywords {
+  font-family: $font-ui !important;
+  font-size: 0.8rem !important;
+  color: $text-muted !important;
+  margin-top: 1.4rem !important;
+  padding-top: 1rem !important;
+  border-top: 1px solid $border-subtle !important;
+
+  strong {
+    font-size: 0.68rem !important;
+    font-weight: 600 !important;
+    letter-spacing: $letter-spacing-lbl !important;
+    text-transform: uppercase !important;
+    color: $text-label !important;
+    display: block !important;
+    margin-bottom: 0.35rem !important;
+  }
+}
+
+
+// ─────────────────────────────────────────────
+//  HEADINGS
+// ─────────────────────────────────────────────
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-display !important;
+  color: $text-primary !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.25 !important;
+}
+
+h1 {
+  font-size: 2.2rem !important;
+  margin-top: 3rem !important;
+  margin-bottom: 0.4rem !important;
+  padding-bottom: 0.5rem !important;
+  border-bottom: 1px solid $border-subtle !important;
+}
+
+h2 {
+  font-size: 1.55rem !important;
+  font-weight: 600 !important;
+  margin-top: 2.4rem !important;
+  margin-bottom: 0.35rem !important;
+  color: #d8d4ce !important;
+}
+
+h3 {
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+  font-style: italic !important;
+  margin-top: 1.8rem !important;
+  color: $text-secondary !important;
+}
+
+h4 {
+  font-family: $font-ui !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: $letter-spacing-lbl !important;
+  color: $text-label !important;
+  margin-top: 1.4rem !important;
+}
+
+
+// ─────────────────────────────────────────────
+//  CUERPO DE TEXTO
+// ─────────────────────────────────────────────
+
+p {
+  font-family: $font-body !important;
+  font-size: $font-size-base !important;
+  line-height: $line-height-body !important;
+  color: $text-primary !important;
+  font-weight: 300 !important;
+  margin-bottom: 1.1rem !important;
+  text-align: justify !important;
+  hyphens: auto !important;
+}
+
+a {
+  color: $accent-blue !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid rgba(74,158,255,0.3) !important;
+  transition: border-color 0.2s !important;
+
+  &:hover {
+    border-bottom-color: $accent-blue !important;
+  }
+}
+
+strong, b {
+  font-weight: 600 !important;
+  color: #f0ede8 !important;
+}
+
+em, i {
+  font-style: italic !important;
+  color: $text-secondary !important;
+}
+
+
+// ─────────────────────────────────────────────
+//  BLOCKQUOTES
+// ─────────────────────────────────────────────
+
+blockquote,
+.quarto-document-content blockquote,
+article blockquote {
+  background: $blockquote-bg !important;
+  background-color: #141922 !important;
+  border-left: 3px solid $blockquote-border !important;
+  border-left-color: #4a7fa5 !important;
+  border-right: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  margin: 2rem 0 !important;
+  padding: 1.25rem 1.6rem !important;
+  border-radius: 0 4px 4px 0 !important;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.3) !important;
+}
+
+blockquote p,
+.quarto-document-content blockquote p,
+article blockquote p,
+blockquote > p {
+  font-family: $font-display !important;
+  font-size: 1.08rem !important;
+  font-style: italic !important;
+  color: #c9cdd8 !important;
+  line-height: 1.75 !important;
+  font-weight: 400 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-align: left !important;
+  text-indent: 0 !important;
+
+  &:last-child { margin-bottom: 0 !important; }
+}
+
+blockquote footer,
+blockquote cite {
+  font-family: $font-ui !important;
+  font-size: 0.82rem !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  color: $blockquote-cite !important;
+  letter-spacing: 0.02em !important;
+  margin-top: 0.7rem !important;
+  padding-top: 0.5rem !important;
+  border-top: 1px solid rgba(74,127,165,0.2) !important;
+  display: block !important;
+
+  &::before {
+    content: "— ";
+    color: $blockquote-border;
+  }
+}
+
+
+// ─────────────────────────────────────────────
+//  CALLOUTS
+// ─────────────────────────────────────────────
+
+.callout {
+  background: $bg-callout !important;
+  border: 1px solid $border-medium !important;
+  border-radius: 6px !important;
+  margin: 2rem 0 !important;
+  overflow: hidden !important;
+}
+
+.callout-header {
+  background: rgba(255,255,255,0.04) !important;
+  padding: 0.65rem 1rem !important;
+  border-bottom: 1px solid $border-subtle !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+.callout-title-container,
+.callout-caption-text {
+  font-family: $font-ui !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  letter-spacing: $letter-spacing-lbl !important;
+  text-transform: uppercase !important;
+}
+
+.callout-body,
+.callout-body-container {
+  padding: 1.1rem 1.25rem !important;
+
+  p {
+    font-family: $font-body !important;
+    font-size: 0.97rem !important;
+    line-height: 1.78 !important;
+    color: $text-primary !important;
+    font-weight: 300 !important;
+    margin-bottom: 0.5rem !important;
+
+    &:last-child { margin-bottom: 0 !important; }
+  }
+}
+
+div.callout-note {
+  border-left: 4px solid $accent-gold !important;
+  border-top: 1px solid $border-medium !important;
+  border-right: 1px solid $border-medium !important;
+  border-bottom: 1px solid $border-medium !important;
+
+  .callout-header {
+    background: rgba(212, 168, 83, 0.06) !important;
+  }
+
+  .callout-title-container,
+  .callout-caption-text {
+    color: $accent-gold-light !important;
+  }
+}
+
+div.callout-warning {
+  border-left: 4px solid #e0974a !important;
+
+  .callout-title-container { color: #e0b87a !important; }
+}
+
+div.callout-important {
+  border-left: 4px solid $accent-red !important;
+
+  .callout-title-container { color: #f08080 !important; }
+}
+
+div.callout-tip {
+  border-left: 4px solid #5aad8f !important;
+
+  .callout-title-container { color: #7ec9ac !important; }
+}
+
+
+// ─────────────────────────────────────────────
+//  SEPARADORES
+// ─────────────────────────────────────────────
+
+hr {
+  border: none !important;
+  border-top: 1px solid $hr-color !important;
+  margin: 2.5rem 0 !important;
+  opacity: 0.6 !important;
+}
+
+
+// ─────────────────────────────────────────────
+//  LISTAS
+// ─────────────────────────────────────────────
+
+ul, ol {
+  font-family: $font-body !important;
+  font-size: $font-size-base !important;
+  color: $text-primary !important;
+  line-height: $line-height-body !important;
+  padding-left: 1.5rem !important;
+  font-weight: 300 !important;
+}
+
+li {
+  margin-bottom: 0.35rem !important;
+
+  &::marker {
+    color: $accent-gold !important;
+    font-size: 0.8em !important;
+  }
+}
+
+
+// ─────────────────────────────────────────────
+//  NOTAS AL PIE
+// ─────────────────────────────────────────────
+
+.footnotes,
+section.footnotes {
+  font-family: $font-ui !important;
+  font-size: 0.82rem !important;
+  color: $text-muted !important;
+  border-top: 1px solid $border-subtle !important;
+  margin-top: 3rem !important;
+  padding-top: 1.2rem !important;
+  line-height: 1.65 !important;
+
+  ol li p {
+    font-family: $font-ui !important;
+    font-size: 0.82rem !important;
+    color: $text-muted !important;
+  }
+}
+
+sup a.footnote-ref {
+  color: $accent-gold !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+
+// ─────────────────────────────────────────────
+//  REFERENCIAS BIBLIOGRÁFICAS
+// ─────────────────────────────────────────────
+
+#refs,
+div#refs {
+  font-family: $font-body !important;
+  font-size: 0.92rem !important;
+  line-height: 1.75 !important;
+  color: $text-secondary !important;
+
+  .csl-entry {
+    margin-bottom: 1rem !important;
+    padding-left: 2em !important;
+    text-indent: -2em !important;
+  }
+}
+
+
+// ─────────────────────────────────────────────
+//  CÓDIGO
+// ─────────────────────────────────────────────
+
+code {
+  font-family: $font-mono !important;
+  font-size: 0.875rem !important;
+  background: #0a0e18 !important;
+  color: #a8d4a8 !important;
+  border-radius: 3px !important;
+  padding: 0.1em 0.35em !important;
+  border: 1px solid $border-subtle !important;
+}
+
+pre {
+  font-family: $font-mono !important;
+  font-size: 0.875rem !important;
+  background: #0a0e18 !important;
+  color: #a8d4a8 !important;
+  border-radius: 3px !important;
+  padding: 1rem 1.2rem !important;
+  border: 1px solid $border-subtle !important;
+  overflow-x: auto !important;
+
+  code {
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+}
+
+
+// ─────────────────────────────────────────────
+//  TABLAS
+// ─────────────────────────────────────────────
+
+table {
+  font-family: $font-ui !important;
+  font-size: 0.88rem !important;
+  border-collapse: collapse !important;
+  width: 100% !important;
+  margin: 1.5rem 0 !important;
+}
+
+thead tr {
+  border-bottom: 2px solid $border-medium !important;
+  background: $bg-secondary !important;
+}
+
+thead th {
+  font-weight: 600 !important;
+  color: $text-secondary !important;
+  padding: 0.6rem 0.8rem !important;
+  text-align: left !important;
+  letter-spacing: 0.03em !important;
+  font-size: 0.8rem !important;
+  text-transform: uppercase !important;
+}
+
+tbody tr {
+  border-bottom: 1px solid $border-subtle !important;
+
+  &:hover {
+    background: rgba(255,255,255,0.02) !important;
+  }
+}
+
+tbody td {
+  padding: 0.55rem 0.8rem !important;
+  color: $text-primary !important;
+}
+
+
+// ─────────────────────────────────────────────
+//  SCROLLBAR PERSONALIZADA
+// ─────────────────────────────────────────────
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $border-medium;
+  border-radius: 3px;
+
+  &:hover {
+    background: rgba(212, 168, 83, 0.4);
+  }
+}
+
+
+// ─────────────────────────────────────────────
+//  COLUMNA MARGINAL — CORRECCIÓN COMPLETA
+//
+//  Causa del fallo: las reglas globales
+//    p { font-size: 1.05rem !important }
+//    .callout-body p { font-size: 0.97rem !important }
+//  ganan sobre cualquier selector sin !important.
+//  Solución: anidar con !important explícito DENTRO
+//  del bloque .column-margin.
+// ─────────────────────────────────────────────
+
+.column-margin {
+  box-sizing: border-box;
+  background: rgba(18,18,20,0.92);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 0.6rem;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  margin-bottom: 1.2rem;   // ← separa bloques consecutivos
+  max-width: 100%;         // ← respeta el ancho de la columna marginal
+  z-index: 2;
+
+  // ── Imagen ──
+  img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 320px !important;
+    object-fit: cover !important;
+    border-radius: 4px !important;
+    border: 1px solid rgba(255,255,255,0.04) !important;
+  }
+
+  // ── Caption de figura ──
+  figcaption,
+  .figure-caption {
+    display: block !important;
+    margin-top: 0.3rem !important;
+    font-size: 0.68rem !important;
+    font-family: $font-ui !important;
+    font-style: italic !important;
+    color: $text-muted !important;
+    line-height: 1.3 !important;
+    text-align: left !important;
+    hyphens: none !important;
+  }
+
+  // ── Texto general: anula reglas globales de p ──
+  p,
+  .callout-body p,
+  .callout-body-container p {
+    font-family: $font-ui !important;
+    font-size: 0.72rem !important;
+    line-height: 1.42 !important;
+    color: $text-secondary !important;
+    font-weight: 300 !important;
+    margin-bottom: 0.4rem !important;
+    text-align: left !important;
+    hyphens: none !important;
+  }
+
+  // ── Títulos de callout reducidos ──
+  .callout-title-container,
+  .callout-caption-text,
+  h5, h6 {
+    font-family: $font-ui !important;
+    font-size: 0.66rem !important;
+    letter-spacing: 0.07em !important;
+  }
+
+  // ── Callout anidado en margen: sin sombra ni margen extra ──
+  .callout {
+    margin: 0 !important;
+    box-shadow: none !important;
+    border-radius: 4px !important;
+  }
+
+  .callout-body,
+  .callout-body-container {
+    padding: 0.55rem 0.65rem !important;
+  }
+
+  .callout-header {
+    padding: 0.4rem 0.65rem !important;
+  }
+
+  // ── Separadores internos ──
+  hr {
+    margin: 0.4rem 0 !important;
+    border-top-color: rgba(255,255,255,0.08) !important;
+    opacity: 1 !important;
+  }
+
+  // ── strong dentro del margen (caption legacy) ──
+  strong {
+    display: block !important;
+    font-size: 0.68rem !important;
+    color: #dcdcdc !important;
+    line-height: 1.3 !important;
+    font-style: italic !important;
+    font-weight: 400 !important;
+  }
+}
+
+
+// ─────────────────────────────────────────────
+//  BLOQUE DE DOCUMENTO MARGINAL
+//  Para citas de fuentes primarias (p.ej. Putin–Xi)
+//  Uso en QMD:
+//    ::: {.column-margin}
+//    <div class="margin-doc-block">
+//    <p class="margin-doc-title">Título<span>fecha</span></p>
+//    "Cita uno…"
+//    "Cita dos…"
+//    <p class="margin-doc-ref"><a href="…">Fuente ↗</a></p>
+//    </div>
+//    :::
+// ─────────────────────────────────────────────
+
+.margin-doc-block {
+
+  p.margin-doc-title {
+    font-family: $font-ui !important;
+    font-size: 0.63rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    color: $text-label !important;
+    margin-bottom: 0.55rem !important;
+    text-align: left !important;
+    hyphens: none !important;
+
+    span {
+      font-weight: 400 !important;
+      text-transform: none !important;
+      display: block !important;
+      font-size: 0.61rem !important;
+      color: $text-muted !important;
+    }
+  }
+
+  p {
+    font-family: $font-ui !important;
+    font-size: 0.70rem !important;
+    font-style: italic !important;
+    font-weight: 300 !important;
+    border-left: 2px solid $accent-gold !important;
+    padding-left: 0.45rem !important;
+    margin-bottom: 0.5rem !important;
+    line-height: 1.4 !important;
+    color: $text-secondary !important;
+    text-align: left !important;
+    hyphens: none !important;
+  }
+
+  p.margin-doc-ref {
+    border-left: none !important;
+    font-style: normal !important;
+    font-size: 0.62rem !important;
+    margin-top: 0.55rem !important;
+    padding-top: 0.4rem !important;
+    padding-left: 0 !important;
+    border-top: 1px solid $border-subtle !important;
+    color: $text-muted !important;
+    a {
+      color: $accent-blue !important;
+      font-size: 0.62rem !important;
+      border-bottom: none !important;
+
+      &:hover {
+        border-bottom: 1px solid rgba(74,158,255,0.4) !important;
+      }
+    }
+  }
+}
+
+
+// ─────────────────────────────────────────────
+//  ATRIBUCIÓN DE FUENTE (uso general)
+// ─────────────────────────────────────────────
+
+.attribution {
+  font-family: $font-ui !important;
+  font-size: 0.65rem !important;
+  color: $text-muted !important;
+  font-style: italic !important;
+  margin-top: 0.5rem !important;
+  line-height: 1.3 !important;
+  text-align: left !important;
+}
+
+
+// ─────────────────────────────────────────────
+//  RESPONSIVE
+// ─────────────────────────────────────────────
+
+@media (max-width: 768px) {
+  .quarto-title-meta {
+    grid-template-columns: 1fr !important;
+  }
+
+  h1.title {
+    font-size: 1.9rem !important;
+  }
+
+  blockquote {
+    margin: 1.2rem 0 !important;
+    padding: 1rem 1.1rem !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .column-margin {
+    max-width: 100%;
+    padding: 0.45rem;
+    box-shadow: none;
+  }
+}
