@@ -29,8 +29,7 @@ This essay examines the accelerating erosion of the multilateral order construct
 
 ## Author
 
-**Miguel Moreno**
-University of Granada · [ORCID 0000-0002-0746-9587](https://orcid.org/0000-0002-0746-9587)
+**Miguel Moreno** · [ORCID 0000-0002-0746-9587](https://orcid.org/0000-0002-0746-9587)
 
 ***
 
