@@ -38,6 +38,10 @@ University of Granada · [ORCID 0000-0002-0746-9587](https://orcid.org/0000-0002
 
 Requires [Quarto](https://quarto.org/) ≥ 1.4.
 
+The codebase is primarily composed of HTML (67.5%), with additional contributions in SCSS (12.9%), TeX (11.3%), and JavaScript (8.3%). HTML provides the structural foundation of the rendered site, SCSS defines the styling layer, TeX supports mathematical and typographic features, and JavaScript enables light client‑side interactivity.
+
+***
+
 ## Licence
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
