@@ -19,13 +19,20 @@ This essay examines the accelerating erosion of the multilateral order construct
 **Miguel Moreno**
 University of Granada · [ORCID 0000-0002-0746-9587](https://orcid.org/0000-0002-0746-9587)
 
+<details>
+<summary>Cover — provided as a courtesy</summary>
+
+<br>
+
+<img src="cover.png" alt="Armoured riders in contemporary caps advance with solemn conviction, the composition implying that ideological nostalgia has found fresh armour" width="720">
+
+*A brief history of regression, illustrated*
+
+</details>
+
 ## Build
 
 Requires [Quarto](https://quarto.org/) ≥ 1.4.
-
-```bash
-quarto render the-unreflective-patriot.qmd
-```
 
 ## Licence
 
